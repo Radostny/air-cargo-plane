@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 20143363}
   - component: {fileID: 20143366}
   - component: {fileID: 20143365}
-  - component: {fileID: 20143364}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -157,19 +156,6 @@ Transform:
   m_Father: {fileID: 242338455}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -40.972, y: 0, z: -9.257}
---- !u!65 &20143364
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 20143362}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &20143365
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -229,9 +215,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 242338455}
+  - component: {fileID: 242338456}
   m_Layer: 0
   m_Name: Orange
-  m_TagString: Untagged
+  m_TagString: Cargo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,6 +241,19 @@ Transform:
   m_Father: {fileID: 421283435}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &242338456
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242338454}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.79353637
+  m_Center: {x: 0, y: 0.09017211, z: 0}
 --- !u!1 &280849881
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +648,6 @@ GameObject:
   - component: {fileID: 605561447}
   - component: {fileID: 605561446}
   - component: {fileID: 605561445}
-  - component: {fileID: 605561444}
   m_Layer: 0
   m_Name: Globe
   m_TagString: Untagged
@@ -656,19 +655,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!135 &605561444
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605561443}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &605561445
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -745,7 +731,6 @@ GameObject:
   - component: {fileID: 640922398}
   - component: {fileID: 640922401}
   - component: {fileID: 640922400}
-  - component: {fileID: 640922399}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -768,19 +753,6 @@ Transform:
   m_Father: {fileID: 242338455}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -40.972, y: 0, z: 18.738}
---- !u!65 &640922399
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 640922397}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &640922400
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -879,7 +851,6 @@ GameObject:
   - component: {fileID: 908439236}
   - component: {fileID: 908439239}
   - component: {fileID: 908439238}
-  - component: {fileID: 908439237}
   m_Layer: 0
   m_Name: Zenith
   m_TagString: Untagged
@@ -902,19 +873,6 @@ Transform:
   m_Father: {fileID: 421283435}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &908439237
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908439235}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &908439238
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -975,6 +933,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1340512701}
   - component: {fileID: 1340512702}
+  - component: {fileID: 1340512704}
+  - component: {fileID: 1340512705}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -1014,6 +974,36 @@ MonoBehaviour:
   _planet: {fileID: 421283435}
   _speed: 20
   _yawSpeed: 40
+--- !u!136 &1340512704
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340512700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.9105926
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.58987546, z: 0}
+--- !u!54 &1340512705
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340512700}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1544727475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,7 +1015,6 @@ GameObject:
   - component: {fileID: 1544727476}
   - component: {fileID: 1544727479}
   - component: {fileID: 1544727478}
-  - component: {fileID: 1544727477}
   m_Layer: 0
   m_Name: NorthSouthPole
   m_TagString: Untagged
@@ -1048,19 +1037,6 @@ Transform:
   m_Father: {fileID: 421283435}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -4.352, y: 79.872, z: 95.069}
---- !u!135 &1544727477
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544727475}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1544727478
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1122,7 +1098,6 @@ GameObject:
   - component: {fileID: 1566157891}
   - component: {fileID: 1566157894}
   - component: {fileID: 1566157893}
-  - component: {fileID: 1566157892}
   m_Layer: 0
   m_Name: Continent
   m_TagString: Untagged
@@ -1145,19 +1120,6 @@ Transform:
   m_Father: {fileID: 421283435}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -18.661, y: 79.445, z: 3.824}
---- !u!135 &1566157892
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1566157890}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1566157893
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1316,7 +1278,6 @@ GameObject:
   - component: {fileID: 1674437797}
   - component: {fileID: 1674437800}
   - component: {fileID: 1674437799}
-  - component: {fileID: 1674437798}
   m_Layer: 0
   m_Name: Continent (2)
   m_TagString: Untagged
@@ -1339,19 +1300,6 @@ Transform:
   m_Father: {fileID: 421283435}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50.441, y: -30.218, z: 50.148}
---- !u!135 &1674437798
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674437796}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1674437799
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1607,7 +1555,6 @@ GameObject:
   - component: {fileID: 1812386562}
   - component: {fileID: 1812386565}
   - component: {fileID: 1812386564}
-  - component: {fileID: 1812386563}
   m_Layer: 0
   m_Name: Continent (1)
   m_TagString: Untagged
@@ -1630,19 +1577,6 @@ Transform:
   m_Father: {fileID: 421283435}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -18.486, y: 76.941, z: -2.264}
---- !u!135 &1812386563
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1812386561}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1812386564
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1897,7 +1831,6 @@ GameObject:
   - component: {fileID: 2104112880}
   - component: {fileID: 2104112883}
   - component: {fileID: 2104112882}
-  - component: {fileID: 2104112881}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -1920,19 +1853,6 @@ Transform:
   m_Father: {fileID: 242338455}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &2104112881
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2104112879}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2104112882
 MeshRenderer:
   m_ObjectHideFlags: 0

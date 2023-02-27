@@ -28,7 +28,7 @@ public class PlaneController : MonoBehaviour
         float acuteAngle = Vector3.Angle(primeMeridian, transform.position);
         float longitude = (isFrontHemisphere ? acuteAngle : 180 - acuteAngle) * hemisphereWestEast;
                 
-        Debug.Log("Coordinates: " + latitude + " : " + longitude);
+        //Debug.Log("Coordinates: " + latitude + " : " + longitude);
     }
 
     enum PinType {City, Cargo};
@@ -70,9 +70,18 @@ public class PlaneController : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Cargo")
+        {
+            Debug.Log("Wow! I got Cargo!");
+            other.gameObject.active = false;
+        }
+    }
+
     private void Start()
     {
-        for (int i = -90; i <= 90; i = i + 15)
+/*        for (int i = -90; i <= 90; i = i + 15)
         {
             for (int j = -180; j <= 180; j = j + 3)
             {
@@ -86,6 +95,6 @@ public class PlaneController : MonoBehaviour
             {
                 Pinpoint(PinType.City, i, j, 1);
             }
-        }
+        }*/
     }
 }
