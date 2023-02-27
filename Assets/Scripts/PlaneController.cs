@@ -9,6 +9,7 @@ public class PlaneController : MonoBehaviour
 
     [SerializeField] private float _speed = 20f;
     [SerializeField] private float _yawSpeed = 40f;
+    public GameObject cargo;
 
     void Update()
     {
@@ -35,20 +36,9 @@ public class PlaneController : MonoBehaviour
 
     void Pinpoint(PinType obj, float latitude, float longitude, int color = 0)
     {
-        if ((Mathf.Abs(latitude) > 90) || (Mathf.Abs(longitude) > 180))
-        {
-            throw new ArgumentException("Coordinate parameter (latitude or longitude) exceed acceptable value");
-        }
-
         GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        float R = 5; // Planet Radius
-        float r = R * Mathf.Cos(latitude * Mathf.Deg2Rad);
-        float x = r * Mathf.Sin(longitude * Mathf.Deg2Rad);
-        float y = R * Mathf.Sin(latitude * Mathf.Deg2Rad);
-        float zModulus = r * Mathf.Cos(longitude * Mathf.Deg2Rad);
-        float z = longitude < 90 ? -zModulus : -zModulus;
 
-        sphere.transform.position = new Vector3(x, y, z);
+        sphere.transform.position = Geo2Xyz(latitude, longitude, 2);
         sphere.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
 
 
@@ -65,9 +55,24 @@ public class PlaneController : MonoBehaviour
                 sphereRenderer.material.color = Color.magenta;
                 break;
         }
-        
+    }
 
+    public Vector3 Geo2Xyz(float latitude, float longitude, float altitude = 0)
+    {
+        if ((Mathf.Abs(latitude) > 90) || (Mathf.Abs(longitude) > 180))
+        {
+            throw new ArgumentException("Coordinate parameter (latitude or longitude) exceed acceptable value");
+        }
 
+        float R = 5; // Planet Radius
+        float r = R * Mathf.Cos(latitude * Mathf.Deg2Rad);
+        float x = r * Mathf.Sin(longitude * Mathf.Deg2Rad);
+        float y = R * Mathf.Sin(latitude * Mathf.Deg2Rad);
+        float zModulus = r * Mathf.Cos(longitude * Mathf.Deg2Rad);
+        float z = longitude < 90 ? -zModulus : -zModulus;
+        Vector3 pointOnSurface = new Vector3(x, y, z);
+
+        return altitude == 0 ? pointOnSurface : Vector3.Normalize(pointOnSurface) * (R + altitude);
     }
 
     private void OnTriggerEnter(Collider other)
