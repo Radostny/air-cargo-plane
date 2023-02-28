@@ -13,6 +13,14 @@ public class PlaneController : MonoBehaviour
 
     [SerializeField] private GameObject _cargoPrefab;
 
+    [SerializeField] GameObject _cargoServiceGameObject;
+    private CargoService _cargoService;
+
+    private void Awake()
+    {
+        _cargoService = _cargoServiceGameObject.GetComponent<CargoService>();
+    }
+
     void Update()
     {
         float yaw = Input.GetAxis("Horizontal");
@@ -63,7 +71,7 @@ public class PlaneController : MonoBehaviour
     {
         float latitude = Random.Range(-90, 90);
         float longitude = Random.Range(-180, 180);
-        Vector3 location = Geo2Xyz(latitude, longitude, 1);
+        Vector3 location = Geo2Xyz(latitude, longitude, 0.3f);
         Quaternion normal = Quaternion.FromToRotation(Vector3.up, location.normalized);
         GameObject orange = Instantiate(_cargoPrefab, location, normal);
     }
@@ -91,7 +99,8 @@ public class PlaneController : MonoBehaviour
         if (other.gameObject.tag == "Cargo")
         {
             Debug.Log("Wow! I got Cargo!");
-            other.gameObject.active = false;
+            //other.gameObject.active = false;
+            _cargoService.PickUpSmoothly(other.gameObject, gameObject);
             PinRandomCargo();
         }
     }
