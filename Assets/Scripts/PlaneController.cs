@@ -12,6 +12,7 @@ public class PlaneController : MonoBehaviour
     [SerializeField] private float _yawSpeed = 40f;
 
     [SerializeField] private GameObject _cargoPrefab;
+    [SerializeField] private GameObject _cityPrefab;
 
     [SerializeField] GameObject _cargoServiceGameObject;
     private CargoService _cargoService;
@@ -76,6 +77,15 @@ public class PlaneController : MonoBehaviour
         GameObject orange = Instantiate(_cargoPrefab, location, normal);
     }
 
+    void PinRandomCity()
+    {
+        float latitude = Random.Range(-90, 90);
+        float longitude = Random.Range(-180, 180);
+        Vector3 location = Geo2Xyz(latitude, longitude);
+        Quaternion normal = Quaternion.FromToRotation(Vector3.up, location.normalized);
+        GameObject city = Instantiate(_cityPrefab, location, normal);
+    }
+
     public Vector3 Geo2Xyz(float latitude, float longitude, float altitude = 0)
     {
         if ((Mathf.Abs(latitude) > 90) || (Mathf.Abs(longitude) > 180))
@@ -108,20 +118,22 @@ public class PlaneController : MonoBehaviour
     private void Start()
     {
         PinRandomCargo();
-/*        for (int i = -90; i <= 90; i = i + 15)
-        {
-            for (int j = -180; j <= 180; j = j + 3)
-            {
-                Pinpoint(PinType.City, i, j);
-            }
-        }
+        PinRandomCity();
+        PinRandomCity();
+        /*        for (int i = -90; i <= 90; i = i + 15)
+                {
+                    for (int j = -180; j <= 180; j = j + 3)
+                    {
+                        Pinpoint(PinType.City, i, j);
+                    }
+                }
 
-        for (int i = -90; i <= 90; i = i + 3)
-        {
-            for (int j = -180; j <= 180; j = j + 15)
-            {
-                Pinpoint(PinType.City, i, j, 1);
-            }
-        }*/
+                for (int i = -90; i <= 90; i = i + 3)
+                {
+                    for (int j = -180; j <= 180; j = j + 15)
+                    {
+                        Pinpoint(PinType.City, i, j, 1);
+                    }
+                }*/
     }
 }
