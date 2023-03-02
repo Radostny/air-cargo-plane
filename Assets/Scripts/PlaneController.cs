@@ -26,6 +26,8 @@ public class PlaneController : MonoBehaviour
     {
         float yaw = Input.GetAxis("Horizontal");
         transform.Rotate(Vector3.up, yaw * _yawSpeed * Time.deltaTime);
+        /*Quaternion roll = Quaternion.Euler(0, 0, yaw * 45);
+        transform.rotation = roll;*/
 
         Vector3 rotationAxis = transform.right;
         transform.RotateAround(_planet.position, rotationAxis, _speed * Time.deltaTime);
